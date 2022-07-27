@@ -25,8 +25,8 @@ def register(request):
 def Info(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        Dataset = Dataset.objects.filter(name__contains=searched)
-        return render (request,'users/Info.html',{'searched': searched, 'Dataset': Dataset})
+        Datasets = Datasets.objects.filter(name__contains=searched)
+        return render (request,'users/Info.html',{'searched': searched, 'Datasets': Datasets})
 
     else: 
         return render (request,'users/Info.html',{})
