@@ -6,8 +6,7 @@ from .forms import UserRegistrationForm
 from .models import Dataset
 
 def home(request):
-    all_Dataset = Dataset.objects.all
-    return render (request,'users/home.html',{'all':all_Dataset})
+    return render (request,'users/home.html',{})
 
 def register(request):
     if request.method == 'POST':
@@ -22,3 +21,12 @@ def register(request):
 
     context = {'form': form}
     return render(request, 'users/register.html', context)
+
+def Info(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        Dataset = Dataset.objects.filter(name__contains=searched)
+     return render (request,'users/Info.html',{'searched': searched})
+
+    else 
+    return render (request,'users/Info.html',{})

@@ -11,6 +11,11 @@
 </div>
 {% endif %}
 
-{%for item in all%}
-   <p>{{item.location}} {{item.crop}}</p>
-{%endfor%}
+<div>
+    <form class="d-flex" method=POST action="{%url 'Info' %}">
+        {% csrf_token %}
+        <input class=" form-control me-2" type="search" placeholder="search" aria-lable="search" name="searched"/>
+        <button class="btn btn-outline-secondary" type="submit">SEARCH</button>
+    </form>
+</div>
+

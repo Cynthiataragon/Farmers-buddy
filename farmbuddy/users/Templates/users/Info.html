@@ -1,0 +1,12 @@
+{% extends 'users/Info.html'%}
+{% block content %}
+<center>
+    {% if searched%}
+    <h1> THE RESULTS</h1>
+    {% else %}
+    <h1>You forgot to search for location</h1>
+    {% endif%}
+
+</center>
+
+{% endblock %}
