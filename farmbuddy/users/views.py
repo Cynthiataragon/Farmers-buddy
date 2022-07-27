@@ -3,9 +3,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .forms import UserRegistrationForm
+from .models import Dataset 
 
 def home(request):
-    return render(request, 'users/home.html')
+    all_Dataset = Dataset.objects.all
+    return render (request,'users/home.html',{'all':all_Dataset})
 
 def register(request):
     if request.method == 'POST':
@@ -13,7 +15,7 @@ def register(request):
         if form.is_valid():
             form.save()
 
-            messages.success(request, f'Your account has been created. You can log in now!')    
+            messages.success(request,'Your account has been created. You can log in now!')    
             return redirect('login')
     else:
         form = UserRegistrationForm()

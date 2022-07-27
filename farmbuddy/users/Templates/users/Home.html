@@ -10,3 +10,6 @@
     <a href="{% url 'login' %}">Login</a>
 </div>
 {% endif %}
+
+{%for item in all%}   <p>{{item.location}}</p>
+{%endfor%}
