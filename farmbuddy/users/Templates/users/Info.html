@@ -3,6 +3,13 @@
 <center>
     {% if searched%}
     <h1> THE RESULTS</h1>
+    <br />
+    {%for Dataset in Dataset%}
+
+    {{Dataset}}-{{Dataset.crop}}<br />
+
+    {%endfor%}
+
     {% else %}
     <h1>You forgot to search for location</h1>
     {% endif%}
