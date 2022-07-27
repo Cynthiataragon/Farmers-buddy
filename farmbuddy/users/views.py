@@ -20,7 +20,7 @@ def register(request):
         form = UserRegistrationForm()
 
     context = {'form': form}
-    return render(request, 'users/register.html', context)
+    return render(request,'users/register.html', context)
 
 def Info(request):
     if request.method == 'POST':
@@ -30,5 +30,6 @@ def Info(request):
 
     else: 
         return render (request,'users/Info.html',{})
+
 def index(request):
     return render(request,'users/index.html', {})
