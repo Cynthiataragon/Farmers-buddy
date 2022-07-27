@@ -30,3 +30,5 @@ def Info(request):
 
     else: 
         return render (request,'users/Info.html',{})
+def index(request):
+    return render(request,'users/index.html', {})
