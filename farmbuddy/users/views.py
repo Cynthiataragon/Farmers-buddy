@@ -26,7 +26,7 @@ def Info(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         Dataset = Dataset.objects.filter(name__contains=searched)
-     return render (request,'users/Info.html',{'searched': searched, 'Dataset': Dataset})
+        return render (request,'users/Info.html',{'searched': searched, 'Dataset': Dataset})
 
-    else 
-    return render (request,'users/Info.html',{})
+    else: 
+        return render (request,'users/Info.html',{})
