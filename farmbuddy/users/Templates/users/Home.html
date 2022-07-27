@@ -1,3 +1,4 @@
+<!--Welcome txt after logging in =-->  
 {% if user.is_authenticated %}
 <div class="alert alert-success" role="alert">
     <h3>Welcome {{ user.username }}!</h3>
@@ -11,10 +12,12 @@
 </div>
 {% endif %}
 
+
+
 <div>
     <form class="d-flex" method=POST action="{%url 'Info' %}">
         {% csrf_token %}
-        <input class=" form-control me-2" type="search" placeholder="search" aria-lable="search" name="searched"/>
+        <input class=" form-control me-2" type="search" placeholder="search" aria-lable="search" name/>
         <button class="btn btn-outline-secondary" type="submit">SEARCH</button>
     </form>
 </div>
